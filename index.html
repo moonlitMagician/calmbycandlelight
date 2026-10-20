@@ -1,0 +1,377 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Calm by Candlelight</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  --paper: #f0ece2;
+  --paper-2: #e1e5d2;
+  --ink: #2c2b25;
+  --ink-soft: #676451;
+  --moss: #66795a;
+  --sage: #a9b99a;
+  --rose: #a98466;
+  --butter: #e2d4a6;
+  --line: #2c2b25;
+  --band-1: #e3ead5;
+  --band-2: #cdd8bd;
+  --band-3: #98ac87;
+  --soft-3: #343325;
+  --display: "Young Serif", Georgia, "Times New Roman", serif;
+  --body: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #1f231d; --paper-2: #293025; --ink: #ece6d8; --ink-soft: #b4af9c;
+    --moss: #a3b896; --sage: #5d6d52; --rose: #c9a27d; --butter: #d8c690; --line: #ece6d8;
+    --band-1: #2f3a2a; --band-2: #273122; --band-3: #1d261b; --soft-3: #b4af9c;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #1f231d; --paper-2: #293025; --ink: #ece6d8; --ink-soft: #b4af9c;
+  --moss: #a3b896; --sage: #5d6d52; --rose: #c9a27d; --butter: #d8c690; --line: #ece6d8;
+  --band-1: #2f3a2a; --band-2: #273122; --band-3: #1d261b; --soft-3: #b4af9c;
+}
+html { scroll-padding-top: calc(env(safe-area-inset-top, 0px) + var(--hh, 100px) + 8px); }
+* , *::before, *::after { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font-family: var(--body); font-size: 1.0625rem; line-height: 1.65;
+}
+h1, h2, h3 { font-family: var(--display); font-weight: 400; line-height: 1.15; margin: 0; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--rose); outline-offset: 3px; border-radius: 4px; }
+
+/* gingham band */
+.gingham {
+  height: 28px;
+  background:
+    repeating-linear-gradient(90deg, color-mix(in srgb, var(--sage) 55%, transparent) 0 14px, transparent 14px 28px),
+    repeating-linear-gradient(0deg, color-mix(in srgb, var(--sage) 55%, transparent) 0 14px, transparent 14px 28px);
+  background-color: var(--paper);
+  border-block: 2px solid var(--line);
+}
+
+/* header */
+header.top {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10;
+  background: color-mix(in srgb, var(--band-1) 94%, transparent);
+  backdrop-filter: blur(6px);
+  border-bottom: 2px solid var(--line);
+}
+.top-inner {
+  max-width: 1120px; margin: 0 auto; padding: 8px 20px 10px;
+  display: flex; flex-direction: column; align-items: flex-start; gap: 4px;
+}
+.brand { font-family: var(--display); font-size: 1.25rem; text-decoration: none; white-space: nowrap; display: inline-flex; align-items: center; gap: 10px; }
+.brand img { width: 36px; height: 38px; object-fit: contain; display: block; }
+nav.cats { display: flex; flex-wrap: wrap; gap: 2px 2px; width: calc(100% + 16px); margin-left: -8px; }
+nav.cats a {
+  white-space: nowrap; text-decoration: none; font-weight: 600; font-size: .9rem; line-height: 1.3;
+  padding: 5px 8px; border-radius: 999px; border: 1.5px solid transparent;
+}
+nav.cats a:hover { border-color: var(--line); background: var(--paper-2); }
+
+/* hero */
+.hero-band { background: var(--band-1); }
+.hero {
+  max-width: 1120px; margin: 0 auto; padding: 56px 20px 64px;
+  display: grid; grid-template-columns: 1.1fr .9fr; gap: 32px; align-items: center;
+}
+.hero h1 { font-size: clamp(2.4rem, 6vw, 4.4rem); }
+.hero p { max-width: 46ch; color: var(--ink-soft); margin: 22px 0 28px; }
+.btn {
+  display: inline-block; text-decoration: none; font-weight: 700;
+  background: var(--moss); color: var(--paper);
+  padding: 12px 26px; border-radius: 999px; border: 2px solid var(--line);
+  box-shadow: 4px 4px 0 var(--line);
+}
+.btn.alt { background: transparent; color: var(--ink); box-shadow: none; margin: 0 0 0 10px; }
+@media (max-width: 480px) { .btn.alt { margin: 14px 0 0; } }
+.btn.alt:hover { background: var(--paper-2); transform: none; box-shadow: none; }
+.btn:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--line); }
+.hero-art { width: 100%; height: auto; max-width: 440px; justify-self: center; filter: drop-shadow(0 10px 18px rgba(44,43,37,.18)); }
+
+/* spa collection */
+.spa { padding: 56px 20px 24px; background: var(--band-2); }
+.spa-inner { max-width: 1080px; margin: 0 auto; }
+.spa-head { max-width: 62ch; margin-bottom: 28px; }
+.spa-head h2 { font-size: clamp(1.9rem, 4.4vw, 3rem); }
+.spa-head p { color: var(--ink-soft); margin: 14px 0 0; }
+.spa-hero { margin: 0 0 28px; }
+.spa-hero img { width: 100%; max-height: 520px; object-fit: cover; display: block; }
+.photo { border: 2px solid var(--line); border-radius: 18px; overflow: hidden; background: var(--paper); }
+.spa-grid { columns: 4 200px; column-gap: 20px; }
+.spa-grid figure { margin: 0 0 20px; break-inside: avoid; }
+.spa-grid img { width: 100%; height: auto; display: block; }
+.spa-grid figcaption { padding: 10px 4px 0; }
+.spa-grid h3 { font-size: 1.1rem; }
+.spa-grid .kind { color: var(--ink-soft); font-size: .92rem; line-height: 1.45; }
+.spa-note { margin: 4px 0 40px; color: var(--ink-soft); font-size: .95rem; }
+
+/* sections */
+main#main { background: var(--band-3); --ink-soft: var(--soft-3); padding-bottom: 40px; }
+main section.cat { padding: 56px 20px 24px; }
+.cat-inner { max-width: 1080px; margin: 0 auto; }
+.cat-head { display: flex; align-items: baseline; gap: 18px; flex-wrap: wrap; margin-bottom: 28px; }
+.cat-head h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); }
+.cat-head p { margin: 0; color: var(--ink-soft); }
+.cat-head::after { content: ""; flex: 1 1 60px; height: 0; border-top: 2px dotted var(--ink-soft); align-self: center; min-width: 40px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 32px 24px; }
+.item { margin: 0; }
+.frame {
+  aspect-ratio: var(--r, 4 / 5); position: relative; overflow: hidden;
+  border: 2px solid var(--line);
+  border-radius: 50% 50% 14px 14px / 34% 34% 14px 14px;
+  background: color-mix(in srgb, var(--tint) 38%, var(--paper));
+  display: grid; place-items: center;
+}
+.frame svg { width: 62%; height: auto; margin-top: 14%; }
+.frame .soon {
+  position: absolute; bottom: 10px; left: 0; right: 0; text-align: center;
+  font-size: .78rem; color: var(--ink-soft);
+}
+.frame img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.grid.has-lead { grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); align-items: start; }
+.grid.wide { grid-template-columns: repeat(auto-fill, minmax(min(100%, var(--min, 400px)), 1fr)); }
+.grid.wide .frame { border-radius: 26px 26px 14px 14px; }
+.grid.wide .frame svg { width: auto; height: 62%; margin-top: 0; }
+.item.lead .photo img { width: 100%; height: auto; display: block; }
+.item figcaption { padding: 14px 4px 0; }
+.item h3 { font-size: 1.2rem; }
+.item .kind { color: var(--ink-soft); font-size: .95rem; }
+
+footer { background: var(--band-3); --ink-soft: var(--soft-3); }
+.foot-inner { max-width: 1120px; margin: 0 auto; padding: 36px 20px 48px; display: grid; gap: 6px; justify-items: start; }
+.foot-inner img { width: 96px; height: auto; margin-bottom: 8px; }
+.foot-inner a { font-weight: 600; }
+.foot-inner .sig { font-family: var(--display); font-size: 1.5rem; }
+.foot-inner p { margin: 0; color: var(--ink-soft); }
+
+@media (max-width: 760px) {
+  .hero { grid-template-columns: 1fr; padding-top: 32px; }
+  .hero-art { max-width: 300px; order: -1; }
+  header.top { position: static; }
+  html { scroll-padding-top: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-inner">
+    <a class="brand" href="#top"><img src="img/logo.png" alt="" width="40" height="42">Calm by Candlelight</a>
+    <nav class="cats" aria-label="Product categories" id="catnav"></nav>
+  </div>
+</header>
+
+<div id="top"></div>
+<div class="hero-band">
+<section class="hero">
+  <div>
+    <h1>Calm by Candlelight</h1>
+    <p>Handmade candles and bath goods for slow evenings, poured, mixed and wrapped by hand in South Africa by Jessica da Silva. Browse the range below. The online shop is on its way.</p>
+    <a class="btn" href="#spa-collection">Spa collection</a><a class="btn alt" href="#candles">See the candles</a>
+  </div>
+  <img class="hero-art" src="img/logo.png" alt="Calm by Candlelight logo: candles and room scents, bath product range, handmade with care in South Africa" width="460" height="483">
+</section>
+</div>
+
+<div class="gingham" aria-hidden="true"></div>
+
+<section class="spa" id="spa-collection" aria-labelledby="spa-h">
+  <div class="spa-inner">
+    <div class="spa-head">
+      <h2 id="spa-h">Calm By Candlelight Spa collection</h2>
+      <p>Pamper your body, calm your mind. Bath teas, salts and scrubs for a slow soak at home, wrapped with care and ready to gift.</p>
+    </div>
+    <figure class="spa-hero photo">
+      <img src="img/collection.jpg" alt="The spa collection laid out on a wooden board: body scrubs in glass jars with bamboo lids, a bath tea pouch, and bath salts in bags tied with twine" width="896" height="698">
+    </figure>
+    <div class="spa-grid">
+      <figure>
+        <div class="photo"><img src="img/p/spa-tea.jpg" alt="Rose and Lavender bath tea in a kraft pouch with a window and a reusable muslin bag" width="600" height="1000" loading="lazy"></div>
+        <figcaption><h3>Bath tea</h3><div class="kind">Rose and Lavender botanical bath infusion, with a reusable pouch.</div></figcaption>
+      </figure>
+      <figure>
+        <div class="photo"><img src="img/body-scrub.jpg" alt="Stacked jars of body scrub with bamboo lids and wooden spoons" width="807" height="1100" loading="lazy"></div>
+        <figcaption><h3>Body scrub</h3><div class="kind">French Pear, Milk and Honey, Peony Suede and Musk, Exotic Woods.</div></figcaption>
+      </figure>
+      <figure>
+        <div class="photo"><img src="img/bath-salts.jpg" alt="Three bags of coloured bath salts tied with twine, each with a wooden spoon" width="1100" height="934" loading="lazy"></div>
+        <figcaption><h3>Bath salts</h3><div class="kind">French Pear, Peony Suede and Musk, Exotic Woods. Comes with a wooden scoop.</div></figcaption>
+      </figure>
+      <figure>
+        <div class="photo"><img src="img/gift-box.jpg" alt="A kraft gift box with a gift tag reading A gift of calm, holding a folded face cloth, a bath bomb, a jar of eucalyptus bath salts and a wooden spoon" width="854" height="1100" loading="lazy"></div>
+        <figcaption><h3>A gift of calm</h3><div class="kind">Gift box with a face cloth, bath bomb and eucalyptus bath salts.</div></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+<div class="gingham" aria-hidden="true"></div>
+
+<main id="main"></main>
+
+<div class="gingham" aria-hidden="true"></div>
+<footer>
+  <div class="foot-inner">
+    <img src="img/logo.png" alt="Calm by Candlelight logo" width="96" height="101">
+    <div class="sig">Calm by Candlelight</div>
+    <p>Handmade with care in South Africa by Jessica da Silva. Online ordering coming soon.</p>
+    <p><a href="https://www.instagram.com/calmbycandlelight" rel="noopener">@calmbycandlelight on Instagram</a></p>
+  </div>
+</footer>
+
+<script>
+const SCENTS = {
+  mh: { name: "Milk and Honey", tint: "#d9b872" },
+  ew: { name: "Exotic Woods", tint: "#8b6b4e" },
+  ps: { name: "Peony Suede and Musk", tint: "#c9a095" },
+  fp: { name: "French Pear", tint: "#b5c18a" },
+  lv: { name: "Lavender", tint: "#a79db3" },
+  eu: { name: "Eucalyptus", tint: "#8fae9d" },
+  tt: { name: "Tea Tree", tint: "#86a8a0" },
+  sm: { name: "Small gift set", tint: "#c9b79c" },
+  md: { name: "Medium gift set", tint: "#b9a888" },
+  lg: { name: "Large gift set", tint: "#a8b596" }
+};
+const FOUR = ["mh", "ew", "ps", "fp"];
+const CATEGORIES = [
+  { id: "candles", name: "Candles", icon: "candle", note: "Hand-poured in jars.", scents: FOUR,
+    features: [{ src: "img/candles-boxed.jpg", w: 524, h: 600, cap: "Gift-boxed candles", kind: "Floral soy wax", alt: "Three floral soy candles in ribbed glass jars in front of kraft gift boxes, with a reed diffuser beside them" }],
+    photos: {
+      mh: { src: "img/candle-milk-honey.jpg", w: 814, h: 821, alt: "Milk and Honey soy candle in a ribbed glass jar topped with a pale pink wax flower, on a wooden tray with a bead garland" },
+      ew: { src: "img/candle-exotic-woods.jpg", w: 858, h: 761, alt: "Exotic Woods soy candle in a ribbed glass jar topped with a sage green wax flower" },
+      ps: { src: "img/candle-peony.jpg", w: 465, h: 436, alt: "Peony Suede and Musk soy candle in a ribbed glass jar topped with a pink wax flower" },
+      fp: { src: "img/candle-french-pear.jpg", w: 852, h: 756, alt: "French Pear soy candle in a ribbed glass jar with a gold rim, topped with a pale green wax flower" }
+    } },
+  { id: "bath-salts", name: "Bath salts", icon: "salts", note: "For a long, slow soak.", scents: FOUR, ratio: "3/4",
+    photos: {
+      mh: { src: "img/p/bath-salts-mh.jpg", w: 600, h: 1000, alt: "Milk and Honey bath salts in a clear bag tied with twine, with a wooden spoon" },
+      ew: { src: "img/p/bath-salts-ew.jpg", w: 600, h: 1000, alt: "Exotic Woods bath salts in a clear bag tied with twine, with a wooden spoon" },
+      ps: { src: "img/p/bath-salts-ps.jpg", w: 600, h: 1000, alt: "Peony Suede and Musk bath salts in a clear bag tied with twine, with a wooden spoon" },
+      fp: { src: "img/p/bath-salts-fp.jpg", w: 600, h: 1000, alt: "French Pear bath salts in a clear bag tied with twine, with a wooden spoon" }
+    } },
+  { id: "bath-bombs", name: "Bath bombs", icon: "bomb", note: "Fizz, colour and scent.", scents: FOUR, ratio: "5/3", wide: true, min: "400px",
+    photos: {
+      mh: { src: "img/p/bath-bombs-mh.jpg", w: 1100, h: 660, alt: "Set of Milk and Honey bath bombs in a clear box with a kraft label band" },
+      ps: { src: "img/p/bath-bombs-ps.jpg", w: 1100, h: 660, alt: "Set of Peony Suede and Musk bath bombs in a clear box with a kraft label band" },
+      fp: { src: "img/p/bath-bombs-fp.jpg", w: 1100, h: 660, alt: "Set of French Pear bath bombs in a clear box with a kraft label band" }
+    } },
+  { id: "bath-fizzies", name: "Bath fizzies", icon: "fizzy", note: "Small, fizzy and fragrant.", scents: FOUR, ratio: "3/5",
+    photos: {
+      mh: { src: "img/p/bath-fizzies-mh.jpg", w: 600, h: 1000, alt: "Milk and Honey bath fizzy in a cone-shaped bag tied with a ribbon, beside a glass of bath salts" },
+      ew: { src: "img/p/bath-fizzies-ew.jpg", w: 600, h: 1000, alt: "Exotic Woods bath fizzy in a cone-shaped bag tied with a ribbon, beside a glass of bath salts" },
+      ps: { src: "img/p/bath-fizzies-ps.jpg", w: 600, h: 1000, alt: "Peony Suede and Musk bath fizzy in a cone-shaped bag tied with a ribbon, beside a glass of bath salts" }
+    } },
+  { id: "diffusers", name: "Diffusers", icon: "diffuser", note: "Reed diffusers for any room.", scents: FOUR, ratio: "3/5",
+    features: [{ src: "img/diffusers.jpg", w: 640, h: 630, cap: "Reed diffusers", kind: "Black and amber glass", alt: "Reed diffusers in black and amber glass bottles with kraft labels, on a wooden table" }],
+    photos: {
+      mh: { src: "img/p/diffusers-mh.jpg", w: 600, h: 1000, alt: "Milk and Honey reed diffuser in a glass bottle with black reeds and a kraft label" },
+      ew: { src: "img/p/diffusers-ew.jpg", w: 600, h: 1000, alt: "Exotic Woods reed diffuser in a glass bottle with black reeds and a kraft label" },
+      ps: { src: "img/p/diffusers-ps.jpg", w: 600, h: 1000, alt: "Peony Suede and Musk reed diffuser in a glass bottle with black reeds and a kraft label" }
+    } },
+  { id: "wax-melts", name: "Wax melts", icon: "melt", note: "Warm them in a burner.", scents: FOUR, ratio: "3/4",
+    features: [{ src: "img/melts-group.jpg", w: 640, h: 618, cap: "Flower-shaped melts", kind: "Soy wax", alt: "Four corked glass jars of soy wax melts with loose flower-shaped melts in pink, cream and green on a wooden table" }],
+    photos: {
+      mh: { src: "img/p/wax-melts-mh.jpg", w: 600, h: 1000, alt: "Milk and Honey wax melts in a kraft pouch with a window" },
+      ew: { src: "img/p/wax-melts-ew.jpg", w: 600, h: 1000, alt: "Exotic Woods wax melts in a kraft pouch with a window" },
+      ps: { src: "img/p/wax-melts-ps.jpg", w: 600, h: 1000, alt: "Peony Suede and Musk wax melts in a kraft pouch with a window" },
+      fp: { src: "img/p/wax-melts-fp.jpg", w: 600, h: 1000, alt: "French Pear wax melts in a kraft pouch with a window" }
+    } },
+  { id: "bath-scrub", name: "Bath scrub", icon: "scrub", note: "Smooth skin, soft scent.", scents: FOUR, ratio: "3/4",
+    photos: {
+      mh: { src: "img/p/bath-scrub-mh.jpg", w: 600, h: 1000, alt: "Milk and Honey body scrub in a glass jar with a wooden lid and scoop" },
+      ew: { src: "img/p/bath-scrub-ew.jpg", w: 600, h: 1000, alt: "Exotic Woods body scrub in a glass jar with a wooden lid and scoop" },
+      ps: { src: "img/p/bath-scrub-ps.jpg", w: 600, h: 1000, alt: "Peony Suede and Musk body scrub in a glass jar with a wooden lid and scoop" },
+      fp: { src: "img/p/bath-scrub-fp.jpg", w: 600, h: 1000, alt: "French Pear body scrub in a glass jar with a wooden lid and scoop" }
+    } },
+  { id: "ambient-mist", name: "Ambient mist", icon: "mist", note: "A quick spritz for rooms and linen.", scents: FOUR, ratio: "3/5",
+    photos: {
+      mh: { src: "img/p/ambient-mist-mh.jpg", w: 600, h: 1000, alt: "Milk and Honey ambient mist in a dark spray bottle with a label" },
+      ew: { src: "img/p/ambient-mist-ew.jpg", w: 600, h: 1000, alt: "Exotic Woods ambient mist in a dark spray bottle with a label" },
+      ps: { src: "img/p/ambient-mist-ps.jpg", w: 600, h: 1000, alt: "Peony Suede and Musk ambient mist in a dark spray bottle with a label" },
+      fp: { src: "img/p/ambient-mist-fp.jpg", w: 600, h: 1000, alt: "French Pear ambient mist in a dark spray bottle with a label" }
+    } },
+  { id: "shower-steamers", name: "Shower steamers", icon: "steamer", note: "Drop one in the shower and breathe.", scents: ["lv", "eu", "tt"], ratio: "3/4",
+    photos: {
+      lv: { src: "img/p/shower-steamers-lv.jpg", w: 750, h: 1000, alt: "Lavender shower steamers in a kraft paper bag with a window" },
+      eu: { src: "img/p/shower-steamers-eu.jpg", w: 750, h: 1000, alt: "Eucalyptus shower steamers in a kraft paper bag with a window" },
+      tt: { src: "img/p/shower-steamers-tt.jpg", w: 750, h: 1000, alt: "Tea Tree shower steamers in a kraft paper bag with a window" }
+    } },
+  { id: "gift-sets", name: "Gift sets", icon: "gift", note: "Boxed and tied with twine, ready to give.", scents: ["sm", "md", "lg"], ratio: "4/3", wide: true, min: "300px",
+    photos: {
+      sm: { src: "img/p/gift-sets-sm.jpg", w: 1100, h: 660, alt: "Small gift set in a kraft box with a window and an A gift of calm tag" },
+      md: { src: "img/p/gift-sets-md.jpg", w: 866, h: 1000, alt: "Medium gift set in a kraft box with a window, tied with twine, with a gift tag" },
+      lg: { src: "img/p/gift-sets-lg.jpg", w: 1100, h: 825, alt: "Large gift set in a kraft box with a window, tied with twine, with a gift tag and a round Calm by Candlelight label" }
+    } }
+];
+
+const S = 'stroke="var(--ink)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"';
+function icon(kind, c) {
+  const f = `fill="${c}"`;
+  const lid = 'fill="var(--paper)"';
+  const shapes = {
+    candle: `<rect x="22" y="50" width="56" height="56" rx="10" ${f} ${S}/><path d="M50 50 v-10" ${S} fill="none"/><path d="M50 38 C 40 26, 46 20, 50 10 C 54 20, 60 26, 50 38z" fill="#d9a350" ${S}/>`,
+    salts: `<rect x="26" y="40" width="48" height="66" rx="10" ${f} ${S}/><rect x="22" y="26" width="56" height="16" rx="6" ${lid} ${S}/><circle cx="40" cy="70" r="2.5" fill="var(--ink)"/><circle cx="58" cy="82" r="2.5" fill="var(--ink)"/><circle cx="50" cy="94" r="2.5" fill="var(--ink)"/>`,
+    bomb: `<circle cx="50" cy="66" r="36" ${f} ${S}/><path d="M18 58 C 36 74, 62 50, 82 70" fill="none" ${S}/>`,
+    fizzy: `<ellipse cx="50" cy="70" rx="38" ry="26" ${f} ${S}/><circle cx="36" cy="66" r="3" fill="var(--paper)"/><circle cx="54" cy="76" r="3" fill="var(--paper)"/><circle cx="62" cy="62" r="3" fill="var(--paper)"/><circle cx="44" cy="82" r="2.5" fill="var(--paper)"/>`,
+    diffuser: `<path d="M38 50 h24 v10 c10 6 14 14 14 26 v14 a8 8 0 0 1 -8 8 h-36 a8 8 0 0 1 -8 -8 v-14 c0 -12 4 -20 14 -26z" ${f} ${S}/><path d="M44 50 L36 10 M50 50 L52 6 M56 50 L68 12" fill="none" ${S}/>`,
+    melt: `<polygon points="50,30 82,48 82,84 50,102 18,84 18,48" ${f} ${S}/><polygon points="50,48 66,57 66,75 50,84 34,75 34,57" fill="var(--paper)" opacity=".55" ${S}/>`,
+    scrub: `<path d="M16 62 h68 l-6 40 a8 8 0 0 1 -8 7 h-40 a8 8 0 0 1 -8 -7z" ${f} ${S}/><rect x="12" y="44" width="76" height="18" rx="8" ${lid} ${S}/>`,
+    mist: `<rect x="30" y="52" width="40" height="56" rx="10" ${f} ${S}/><rect x="40" y="36" width="20" height="16" rx="3" ${lid} ${S}/><path d="M60 40 h16 v-8 h-12" fill="none" ${S}/><path d="M84 30 l8 -4 M84 36 h10 M84 42 l8 4" fill="none" ${S}/>`,
+    gift: `<rect x="20" y="52" width="60" height="54" rx="6" ${f} ${S}/><path d="M20 72 h60 M50 52 v54" fill="none" ${S}/><path d="M50 52 c-14 -22 -30 -6 -14 0 M50 52 c14 -22 30 -6 14 0" fill="none" ${S}/>`,
+    steamer: `<circle cx="50" cy="66" r="34" ${f} ${S}/><path d="M50 46 c-8 10 -8 22 0 32 c8 -10 8 -22 0 -32z" fill="var(--paper)" opacity=".7" ${S}/>`
+  };
+  return `<svg viewBox="0 0 100 120" aria-hidden="true">${shapes[kind]}</svg>`;
+}
+
+const main = document.getElementById("main");
+const nav = document.getElementById("catnav");
+{ const a = document.createElement("a"); a.href = "#spa-collection"; a.textContent = "Spa collection"; nav.appendChild(a); }
+CATEGORIES.forEach(cat => {
+  const a = document.createElement("a");
+  a.href = "#" + cat.id; a.textContent = cat.name;
+  nav.appendChild(a);
+
+  const sec = document.createElement("section");
+  sec.className = "cat"; sec.id = cat.id;
+  sec.setAttribute("aria-labelledby", cat.id + "-h");
+  const items = cat.scents.map(k => {
+    const s = SCENTS[k];
+    const ph = cat.photos && cat.photos[k];
+    const frame = ph
+      ? `<div class="frame" style="--tint:${s.tint}"><img src="${ph.src}" alt="${ph.alt}" width="${ph.w}" height="${ph.h}" loading="lazy" style="object-position:${ph.pos || "50% 50%"}"></div>`
+      : `<div class="frame" style="--tint:${s.tint}" role="img" aria-label="Placeholder photo of ${cat.name.toLowerCase()}, ${s.name}">${icon(cat.icon, s.tint)}<span class="soon">photo coming soon</span></div>`;
+    return `<figure class="item">${frame}
+      <figcaption><h3>${s.name}</h3><div class="kind">${cat.name}</div></figcaption>
+    </figure>`;
+  }).join("");
+  const leads = (cat.features || []).map(f =>
+    `<figure class="item lead"><div class="photo"><img src="${f.src}" alt="${f.alt}" width="${f.w}" height="${f.h}" loading="lazy"></div>
+      <figcaption><h3>${f.cap}</h3><div class="kind">${f.kind}</div></figcaption></figure>`
+  ).join("");
+  sec.innerHTML = `<div class="cat-inner">
+    <div class="cat-head"><h2 id="${cat.id}-h">${cat.name}</h2><p>${cat.note}</p></div>
+    <div class="grid${leads ? " has-lead" : ""}${cat.wide ? " wide" : ""}" style="--r:${cat.ratio || "4/5"};--min:${cat.min || "400px"}">${leads}${items}</div></div>`;
+  main.appendChild(sec);
+});
+const hdr = document.querySelector("header.top");
+const setHH = () => document.documentElement.style.setProperty("--hh", hdr.offsetHeight + "px");
+setHH(); addEventListener("resize", setHH); addEventListener("load", setHH);
+</script>
+</body>
+</html>
+
+</body></html>
