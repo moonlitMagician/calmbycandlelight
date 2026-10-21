@@ -149,6 +149,7 @@ main section.cat { padding: 56px 20px 24px; }
 .item figcaption { padding: 14px 4px 0; }
 .item h3 { font-size: 1.2rem; }
 .item .kind { color: var(--ink-soft); font-size: .95rem; }
+.price { font-weight: 700; font-size: 1.02rem; margin-top: 2px; }
 
 footer { background: var(--band-3); --ink-soft: var(--soft-3); }
 .foot-inner { max-width: 1120px; margin: 0 auto; padding: 36px 20px 48px; display: grid; gap: 6px; justify-items: start; }
@@ -202,15 +203,15 @@ footer { background: var(--band-3); --ink-soft: var(--soft-3); }
     <div class="spa-grid">
       <figure>
         <div class="photo"><img src="img/p/spa-tea.jpg" alt="Rose and Lavender bath tea in a kraft pouch with a window and a reusable muslin bag" width="600" height="1000" loading="lazy"></div>
-        <figcaption><h3>Bath tea</h3><div class="kind">Rose and Lavender botanical bath infusion, with a reusable pouch.</div></figcaption>
+        <figcaption><h3>Bath tea</h3><div class="kind">Rose and Lavender botanical bath infusion, with a reusable pouch.</div><div class="price">R120</div></figcaption>
       </figure>
       <figure>
         <div class="photo"><img src="img/body-scrub.jpg" alt="Stacked jars of body scrub with bamboo lids and wooden spoons" width="807" height="1100" loading="lazy"></div>
-        <figcaption><h3>Body scrub</h3><div class="kind">French Pear, Milk and Honey, Peony Suede and Musk, Exotic Woods.</div></figcaption>
+        <figcaption><h3>Body scrub</h3><div class="kind">French Pear, Milk and Honey, Peony Suede and Musk, Exotic Woods.</div><div class="price">R90</div></figcaption>
       </figure>
       <figure>
         <div class="photo"><img src="img/bath-salts.jpg" alt="Three bags of coloured bath salts tied with twine, each with a wooden spoon" width="1100" height="934" loading="lazy"></div>
-        <figcaption><h3>Bath salts</h3><div class="kind">French Pear, Peony Suede and Musk, Exotic Woods. Comes with a wooden scoop.</div></figcaption>
+        <figcaption><h3>Bath salts</h3><div class="kind">French Pear, Peony Suede and Musk, Exotic Woods. Comes with a wooden scoop.</div><div class="price">R90</div></figcaption>
       </figure>
       <figure>
         <div class="photo"><img src="img/gift-box.jpg" alt="A kraft gift box with a gift tag reading A gift of calm, holding a folded face cloth, a bath bomb, a jar of eucalyptus bath salts and a wooden spoon" width="854" height="1100" loading="lazy"></div>
@@ -248,7 +249,7 @@ const SCENTS = {
 };
 const FOUR = ["mh", "ew", "ps", "fp"];
 const CATEGORIES = [
-  { id: "candles", name: "Candles", icon: "candle", note: "Hand-poured in jars.", scents: FOUR,
+  { id: "candles", price: "R180", name: "Candles", icon: "candle", note: "Hand-poured in jars.", scents: FOUR,
     features: [{ src: "img/candles-boxed.jpg", w: 524, h: 600, cap: "Gift-boxed candles", kind: "Floral soy wax", alt: "Three floral soy candles in ribbed glass jars in front of kraft gift boxes, with a reed diffuser beside them" }],
     photos: {
       mh: { src: "img/candle-milk-honey.jpg", w: 814, h: 821, alt: "Milk and Honey soy candle in a ribbed glass jar topped with a pale pink wax flower, on a wooden tray with a bead garland" },
@@ -256,33 +257,33 @@ const CATEGORIES = [
       ps: { src: "img/candle-peony.jpg", w: 465, h: 436, alt: "Peony Suede and Musk soy candle in a ribbed glass jar topped with a pink wax flower" },
       fp: { src: "img/candle-french-pear.jpg", w: 852, h: 756, alt: "French Pear soy candle in a ribbed glass jar with a gold rim, topped with a pale green wax flower" }
     } },
-  { id: "bath-salts", name: "Bath salts", icon: "salts", note: "For a long, slow soak.", scents: FOUR, ratio: "3/4",
+  { id: "bath-salts", price: "R90", name: "Bath salts", icon: "salts", note: "For a long, slow soak.", scents: FOUR, ratio: "3/4",
     photos: {
       mh: { src: "img/p/bath-salts-mh.jpg", w: 600, h: 1000, alt: "Milk and Honey bath salts in a clear bag tied with twine, with a wooden spoon" },
       ew: { src: "img/p/bath-salts-ew.jpg", w: 600, h: 1000, alt: "Exotic Woods bath salts in a clear bag tied with twine, with a wooden spoon" },
       ps: { src: "img/p/bath-salts-ps.jpg", w: 600, h: 1000, alt: "Peony Suede and Musk bath salts in a clear bag tied with twine, with a wooden spoon" },
       fp: { src: "img/p/bath-salts-fp.jpg", w: 600, h: 1000, alt: "French Pear bath salts in a clear bag tied with twine, with a wooden spoon" }
     } },
-  { id: "bath-bombs", name: "Bath bombs", icon: "bomb", note: "Fizz, colour and scent.", scents: FOUR, ratio: "5/3", wide: true, min: "400px",
+  { id: "bath-bombs", price: "R140", name: "Bath bombs", icon: "bomb", note: "Fizz, colour and scent.", scents: FOUR, ratio: "5/3", wide: true, min: "400px",
     photos: {
       mh: { src: "img/p/bath-bombs-mh.jpg", w: 1100, h: 660, alt: "Set of Milk and Honey bath bombs in a clear box with a kraft label band" },
       ps: { src: "img/p/bath-bombs-ps.jpg", w: 1100, h: 660, alt: "Set of Peony Suede and Musk bath bombs in a clear box with a kraft label band" },
       fp: { src: "img/p/bath-bombs-fp.jpg", w: 1100, h: 660, alt: "Set of French Pear bath bombs in a clear box with a kraft label band" }
     } },
-  { id: "bath-fizzies", name: "Bath fizzies", icon: "fizzy", note: "Small, fizzy and fragrant.", scents: FOUR, ratio: "3/5",
+  { id: "bath-fizzies", price: "R80", name: "Bath fizzies", icon: "fizzy", note: "Small, fizzy and fragrant.", scents: FOUR, ratio: "3/5",
     photos: {
       mh: { src: "img/p/bath-fizzies-mh.jpg", w: 600, h: 1000, alt: "Milk and Honey bath fizzy in a cone-shaped bag tied with a ribbon, beside a glass of bath salts" },
       ew: { src: "img/p/bath-fizzies-ew.jpg", w: 600, h: 1000, alt: "Exotic Woods bath fizzy in a cone-shaped bag tied with a ribbon, beside a glass of bath salts" },
       ps: { src: "img/p/bath-fizzies-ps.jpg", w: 600, h: 1000, alt: "Peony Suede and Musk bath fizzy in a cone-shaped bag tied with a ribbon, beside a glass of bath salts" }
     } },
-  { id: "diffusers", name: "Diffusers", icon: "diffuser", note: "Reed diffusers for any room.", scents: FOUR, ratio: "3/5",
+  { id: "diffusers", price: "R230 large, R170 small", name: "Diffusers", icon: "diffuser", note: "Reed diffusers for any room.", scents: FOUR, ratio: "3/5",
     features: [{ src: "img/diffusers.jpg", w: 640, h: 630, cap: "Reed diffusers", kind: "Black and amber glass", alt: "Reed diffusers in black and amber glass bottles with kraft labels, on a wooden table" }],
     photos: {
       mh: { src: "img/p/diffusers-mh.jpg", w: 600, h: 1000, alt: "Milk and Honey reed diffuser in a glass bottle with black reeds and a kraft label" },
       ew: { src: "img/p/diffusers-ew.jpg", w: 600, h: 1000, alt: "Exotic Woods reed diffuser in a glass bottle with black reeds and a kraft label" },
       ps: { src: "img/p/diffusers-ps.jpg", w: 600, h: 1000, alt: "Peony Suede and Musk reed diffuser in a glass bottle with black reeds and a kraft label" }
     } },
-  { id: "wax-melts", name: "Wax melts", icon: "melt", note: "Warm them in a burner.", scents: FOUR, ratio: "3/4",
+  { id: "wax-melts", price: "R60", name: "Wax melts", icon: "melt", note: "Warm them in a burner.", scents: FOUR, ratio: "3/4",
     features: [{ src: "img/melts-group.jpg", w: 640, h: 618, cap: "Flower-shaped melts", kind: "Soy wax", alt: "Four corked glass jars of soy wax melts with loose flower-shaped melts in pink, cream and green on a wooden table" }],
     photos: {
       mh: { src: "img/p/wax-melts-mh.jpg", w: 600, h: 1000, alt: "Milk and Honey wax melts in a kraft pouch with a window" },
@@ -290,27 +291,27 @@ const CATEGORIES = [
       ps: { src: "img/p/wax-melts-ps.jpg", w: 600, h: 1000, alt: "Peony Suede and Musk wax melts in a kraft pouch with a window" },
       fp: { src: "img/p/wax-melts-fp.jpg", w: 600, h: 1000, alt: "French Pear wax melts in a kraft pouch with a window" }
     } },
-  { id: "bath-scrub", name: "Bath scrub", icon: "scrub", note: "Smooth skin, soft scent.", scents: FOUR, ratio: "3/4",
+  { id: "bath-scrub", price: "R90", name: "Bath scrub", icon: "scrub", note: "Smooth skin, soft scent.", scents: FOUR, ratio: "3/4",
     photos: {
       mh: { src: "img/p/bath-scrub-mh.jpg", w: 600, h: 1000, alt: "Milk and Honey body scrub in a glass jar with a wooden lid and scoop" },
       ew: { src: "img/p/bath-scrub-ew.jpg", w: 600, h: 1000, alt: "Exotic Woods body scrub in a glass jar with a wooden lid and scoop" },
       ps: { src: "img/p/bath-scrub-ps.jpg", w: 600, h: 1000, alt: "Peony Suede and Musk body scrub in a glass jar with a wooden lid and scoop" },
       fp: { src: "img/p/bath-scrub-fp.jpg", w: 600, h: 1000, alt: "French Pear body scrub in a glass jar with a wooden lid and scoop" }
     } },
-  { id: "ambient-mist", name: "Ambient mist", icon: "mist", note: "A quick spritz for rooms and linen.", scents: FOUR, ratio: "3/5",
+  { id: "ambient-mist", price: "R80", name: "Ambient mist", icon: "mist", note: "A quick spritz for rooms and linen.", scents: FOUR, ratio: "3/5",
     photos: {
       mh: { src: "img/p/ambient-mist-mh.jpg", w: 600, h: 1000, alt: "Milk and Honey ambient mist in a dark spray bottle with a label" },
       ew: { src: "img/p/ambient-mist-ew.jpg", w: 600, h: 1000, alt: "Exotic Woods ambient mist in a dark spray bottle with a label" },
       ps: { src: "img/p/ambient-mist-ps.jpg", w: 600, h: 1000, alt: "Peony Suede and Musk ambient mist in a dark spray bottle with a label" },
       fp: { src: "img/p/ambient-mist-fp.jpg", w: 600, h: 1000, alt: "French Pear ambient mist in a dark spray bottle with a label" }
     } },
-  { id: "shower-steamers", name: "Shower steamers", icon: "steamer", note: "Drop one in the shower and breathe.", scents: ["lv", "eu", "tt"], ratio: "3/4",
+  { id: "shower-steamers", price: "R120", name: "Shower steamers", icon: "steamer", note: "Drop one in the shower and breathe.", scents: ["lv", "eu", "tt"], ratio: "3/4",
     photos: {
       lv: { src: "img/p/shower-steamers-lv.jpg", w: 750, h: 1000, alt: "Lavender shower steamers in a kraft paper bag with a window" },
       eu: { src: "img/p/shower-steamers-eu.jpg", w: 750, h: 1000, alt: "Eucalyptus shower steamers in a kraft paper bag with a window" },
       tt: { src: "img/p/shower-steamers-tt.jpg", w: 750, h: 1000, alt: "Tea Tree shower steamers in a kraft paper bag with a window" }
     } },
-  { id: "gift-sets", name: "Gift sets", icon: "gift", note: "Boxed and tied with twine, ready to give.", scents: ["sm", "md", "lg"], ratio: "4/3", wide: true, min: "300px",
+  { id: "gift-sets", prices: { sm: "R195", md: "R220", lg: "R320" }, name: "Gift sets", icon: "gift", note: "Boxed and tied with twine, ready to give.", scents: ["sm", "md", "lg"], ratio: "4/3", wide: true, min: "300px",
     photos: {
       sm: { src: "img/p/gift-sets-sm.jpg", w: 1100, h: 660, alt: "Small gift set in a kraft box with a window and an A gift of calm tag" },
       md: { src: "img/p/gift-sets-md.jpg", w: 866, h: 1000, alt: "Medium gift set in a kraft box with a window, tied with twine, with a gift tag" },
@@ -351,11 +352,12 @@ CATEGORIES.forEach(cat => {
   const items = cat.scents.map(k => {
     const s = SCENTS[k];
     const ph = cat.photos && cat.photos[k];
+    const price = (cat.prices && cat.prices[k]) || cat.price;
     const frame = ph
       ? `<div class="frame" style="--tint:${s.tint}"><img src="${ph.src}" alt="${ph.alt}" width="${ph.w}" height="${ph.h}" loading="lazy" style="object-position:${ph.pos || "50% 50%"}"></div>`
       : `<div class="frame" style="--tint:${s.tint}" role="img" aria-label="Placeholder photo of ${cat.name.toLowerCase()}, ${s.name}">${icon(cat.icon, s.tint)}<span class="soon">photo coming soon</span></div>`;
     return `<figure class="item">${frame}
-      <figcaption><h3>${s.name}</h3><div class="kind">${cat.name}</div></figcaption>
+      <figcaption><h3>${s.name}</h3><div class="kind">${cat.name}</div>${price ? `<div class="price">${price}</div>` : ""}</figcaption>
     </figure>`;
   }).join("");
   const leads = (cat.features || []).map(f =>
